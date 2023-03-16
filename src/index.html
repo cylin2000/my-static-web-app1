@@ -11,7 +11,20 @@
 <body>
   <main>
     <h1>Vanilla JavaScript App1</h1>
+
+    <a href="./auth/login/aad"> Login AAD </a>
+    <a href="./auth/logout"> Logout </a>
+
+    <a href="javascript:doubleLogout()">Double Logout</a>
   </main>
 </body>
-
+  <script>
+    function doubleLogout(){
+      var url = window.location.href + '.auth/logout';
+      fetch(url)
+      .then(res=>{
+          window.location.href = url;
+      })
+    }
+  </script>
 </html>
